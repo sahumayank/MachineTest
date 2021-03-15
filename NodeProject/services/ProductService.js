@@ -1,6 +1,6 @@
 var Product = require("../bean/Product");
 var BaseService = require("./BaseService");
-var subCategoryService = require("../services/SubCategoryService")
+var SubCategoryService = require("../services/SubCategoryService")
 class ProductService extends BaseService {
 
     findByPk(id, callback, ctx) {
@@ -34,18 +34,22 @@ class ProductService extends BaseService {
                 callback(err);
             } else {
                 var pk = result.insertId;
-                var subCategoryService = new subCategoryService()
-                subCategoryService.findByPk(bean.category_ID, function (cErr, result) {
+                var masterCategory = new SubCategoryService()
+                masterCategory.findByPk(bean.category2_ID, function (cErr, result) {
+                 console.log(cErr, result)
                     if (!cErr) {
-                        var upateSql = "UPDATE product SET CATEGORY2_NAME=? WHERE ID = ?";
+                        var upateSql = "UPDATE Product SET CATEGORY_NAME=? WHERE ID = ?";
                         var params = [result.name, pk];
                         masterCategory.executeSQL(upateSql, params, function (cErr, sResult) {
                             callback(err, pk);
                         })
                     }
                 }, ctx)
+                //                callback(err, pk);
+
             }
         });
+
     };
 
     update(bean, callback) {
