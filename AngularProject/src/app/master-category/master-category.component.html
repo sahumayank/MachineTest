@@ -1,0 +1,90 @@
+<br>
+<div *ngIf="flag ;else detal" class="table-responsive ">
+  <button (click)="edit('add','')" class="btn btn-outline-success btn-sm ">
+    <i class="fa fa-edit "></i>Add
+  </button>
+  <div *ngIf="form.success" class="alert alert-success">
+    <strong>
+      {{form.message}}
+    </strong>
+  </div>
+
+  
+  <table class="table table-sm table-striped ">
+    <thead>
+      <tr>
+        <th> ID</th>
+        <th> Name</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of result">
+        <td>{{l.id}}</td>
+        <td>{{l.name}}</td>
+        <td>{{l.description}}</td>
+        <td align="right ">
+          <div class="row">
+            <button (click)="edit('edit',l)" class="btn btn-outline-success btn-sm ">
+              <i class="fa fa-edit "></i>Edit
+            </button>
+          </div>
+        </td>
+        <td align="right ">
+          <div class="row">
+            <button (click)="delete(l.id)" class="btn btn-outline-success btn-sm ">
+              <i class="fa fa-edit "></i>Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #detal>
+  <div class="container_fluid m-4">
+    <div class="container border col-sm-6">
+      <h4 class="border-bottom pt-2">Master Category</h4>
+      <div *ngIf="form.success" class="alert alert-success">
+        <input type="hidden" name="id" [(ngModel)]="form.id" value="0">
+        <strong>
+          {{form.message}}
+        </strong>
+      </div>
+      <form method="POST">
+
+        <div class="was-validated">
+          <div class="form-group form-row">
+            <label for="name" class="col-sm-3 col-form-label col-form-label-sm col">
+              Name <i class="fas fa-asterisk" style="color:red"></i>
+            </label>
+            <div class="col">
+              <input class="form-control form-control-sm" type="text" [(ngModel)]="form.name" id="name" name="name"
+                required>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="description" class="col-sm-3 col-form-label col-form-label-sm col">
+              Description <i class="fas fa-asterisk" style="color:red"></i>
+            </label>
+            <div class="col">
+              <input class="form-control form-control-sm" type="text" [(ngModel)]="form.description" id="description"
+                name="description" required>
+            </div>
+          </div>
+          <div class="form-group form-row justify-content-end">
+            <input type="submit" (click)="save()" value="Save">
+
+            &nbsp;
+            <button type="button" (click)="close()" class="btn btn-outline-secondary btn-sm">
+              <i class="fa fa-window-close"></i> Close
+            </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</ng-template>

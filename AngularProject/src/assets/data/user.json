@@ -1,0 +1,23 @@
+{   "success":true,
+    "result":[{
+    "id": 1,
+    "name": "Mayank",
+    "login": "mayanksahu142@gmail.com",
+    "password": "pass1234"
+
+  },
+  {
+    "id": 2,
+    "name": "Raj",
+    "login": "raj@gmail.com",
+    "password": "pass1234"
+
+  },{
+    "id": 3,
+    "name": "aman",
+    "login": "aman@gmail.com",
+    "password": "pass1234"
+
+  }
+]
+}

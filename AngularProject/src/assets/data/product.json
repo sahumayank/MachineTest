@@ -1,0 +1,38 @@
+{
+
+  "success": true,
+  "result": [{
+      "productID": 1,
+      "productName": "CHECK PRINT SHIRT",
+      "productPrice": 250,
+      "itemWeight": "300g",
+      "warranty":"1 Month"
+    },
+    {
+      "productID": 2,
+      "productName": "GLORIA HIGH LOGO SNEAKER",
+      "productPrice": 2500,
+      "itemWeight": "1.12g",
+      "warranty":"2 Year"
+    }, {
+      "productID": 3,
+      "productName": "CATE RIGID BAG",
+      "productPrice": 350,
+      "itemWeight": "450g",
+      "warranty":"4 Year"
+
+    }, {
+      "productID": 4,
+      "productName": "GUESS CONNECT WATCH",
+      "productPrice": 250,
+      "itemWeight": "50g",
+      "warranty":"1.5 Year"
+    }, {
+      "productID": 5,
+      "productName": "70s RETRO GLAM KEFIAH",
+      "productPrice": 250,
+      "itemWeight": "450g",
+      "warranty":"1 Year"
+    }
+  ]
+}

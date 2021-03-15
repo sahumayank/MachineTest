@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container_fluid m-4">
+    <div class="container border col-sm-6">
+      <h4 class="border-bottom pt-2">Login</h4>
+
+      <div class="alert alert-danger" *ngIf="form.error">
+                <strong> 
+                     &nbsp;{{form.message}}
+                   </strong>
+            </div>
+
+      <div class="was-validated">
+        <div class="form-group form-row">
+          <label for="login" class="col-sm-2 col-form-label col-form-label-sm text-nowrap col">Email <i
+              class="fas fa-asterisk" style="color:red"></i></label>
+          <div class="col">
+            <input type="email" class="form-control form-control-sm" [(ngModel)]="form.login" id="login" placeholder="Login" required>
+          </div>
+        </div>
+        <div class="form-group form-row">
+          <label for="pwd" class="col-sm-2 col-form-label col-form-label-sm text-nowrap col">Password <i
+              class="fas fa-asterisk" style="color:red"></i></label>
+          <div class="col">
+            <input type="password" class="form-control form-control-sm"  [(ngModel)]="form.password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="form-group form-row justify-content-end">
+          <button type="button" class="btn btn-outline-primary btn-sm" (click)="signIn()"><i class="fa fa-sign-in-alt"></i> Sign
+            In</button> &nbsp;
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
